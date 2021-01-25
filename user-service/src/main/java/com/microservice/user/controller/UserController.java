@@ -54,7 +54,7 @@ public class UserController {
 
 
         if (user.isPresent()) {
-            Department department = restTemplate.getForObject("http://localhost:9001/v1/departments/" + user.get().getDepartmentId(), Department.class);
+            Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/v1/departments/" + user.get().getDepartmentId(), Department.class);
             responseObject.setUser(user.get());
             responseObject.setDepartment(department);
             return new ResponseEntity(responseObject, HttpStatus.FOUND);

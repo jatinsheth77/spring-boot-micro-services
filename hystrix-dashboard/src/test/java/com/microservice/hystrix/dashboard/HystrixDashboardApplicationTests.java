@@ -1,11 +1,10 @@
-package com.microservice.department;
+package com.microservice.hystrix.dashboard;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootTest
-class DepartmentServiceApplicationTests {
+class HystrixDashboardApplicationTests {
 
 	@Test
 	void contextLoads() {

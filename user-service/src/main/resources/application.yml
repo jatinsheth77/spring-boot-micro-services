@@ -1,6 +1,10 @@
 server:
   port: 9002
 
+spring:
+  application:
+    name: USER-SERVICE
+
 logging:
   level:
     org.springframework: ERROR
@@ -9,3 +13,13 @@ logging:
     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
     file: "%d %p %c{1.} [%t] %m%n"
   file: app.log
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostName: localhost
+

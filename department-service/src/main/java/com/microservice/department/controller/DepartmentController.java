@@ -2,7 +2,6 @@ package com.microservice.department.controller;
 
 import com.microservice.department.entity.Department;
 import com.microservice.department.service.DepartmentService;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,15 +34,14 @@ public class DepartmentController {
 
         Department department = departmentService.saveDepartment(departmentRequest);
 
-        if(department != null) {
+        if (department != null) {
             return new ResponseEntity(department, HttpStatus.CREATED);
-        }else{
+        } else {
             return new ResponseEntity(HttpStatus.FORBIDDEN);
         }
     }
 
     @GetMapping(value = "/departments/{id}", produces = "application/json")
-
     public ResponseEntity findDepartmentById(@PathVariable("id") Long id) {
         logger.debug("DepartmentController.findDepartmentById");
         Optional<Department> departmentById = departmentService.findDepartmentById(id);
